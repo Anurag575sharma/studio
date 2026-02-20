@@ -20,12 +20,11 @@ export default function BranchesPage() {
                 description="The filmmaking and creative arts wing. RangManch is where stories come to life through film, photography, and visual arts. We handle all creative aspects of INSPIRE's events."
              >
                 <Image
-                    src="https://picsum.photos/seed/rangmanch/800/600"
-                    alt="Filmmaking equipment"
+                    src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601603/rangManchLogo_d12i1b.jpg"
+                    alt="RangManch Logo"
                     width={800}
                     height={600}
-                    className="h-full w-full object-cover"
-                    data-ai-hint="film camera"
+                    className="h-full w-full object-contain p-8"
                 />
              </SpotlightCard>
 
@@ -34,12 +33,11 @@ export default function BranchesPage() {
                 description="Our social initiative dedicated to education for all. Avantikulam volunteers work to bridge educational gaps in the community, teaching and mentoring underprivileged students."
              >
                  <Image
-                    src="https://picsum.photos/seed/avantikulam/800/600"
-                    alt="Children learning in a classroom"
+                    src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601496/avantikulamLogo_hrywz9.jpg"
+                    alt="Avantikulam Logo"
                     width={800}
                     height={600}
-                    className="h-full w-full object-cover"
-                    data-ai-hint="children classroom"
+                    className="h-full w-full object-contain p-8"
                 />
              </SpotlightCard>
         </div>

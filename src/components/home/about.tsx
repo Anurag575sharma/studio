@@ -44,11 +44,10 @@ export function About() {
         </div>
         <div className="relative h-96 w-full animate-in fade-in-0 zoom-in-95 duration-500">
            <Image
-            src="https://picsum.photos/seed/about/1200/800"
+            src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601365/AboutUsImage_aes6yz.jpg"
             alt="Team working together"
             fill
             className="rounded-2xl object-cover shadow-2xl"
-            data-ai-hint="team collaboration"
            />
         </div>
       </div>
