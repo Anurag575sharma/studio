@@ -3,7 +3,7 @@ import dbConnect from '@/lib/db-connect';
 import Event from '@/lib/models/Event';
 import Member from '@/lib/models/Member';
 import Alumni from '@/lib/models/Alumni';
-import GalleryImage from '@/lib/models/GalleryImage';
+import Image from '@/lib/models/GalleryImage';
 import { events, members, alumni, galleryImages } from '@/lib/seed-data';
 
 export async function GET(request: Request) {
@@ -14,13 +14,13 @@ export async function GET(request: Request) {
     await Event.deleteMany({});
     await Member.deleteMany({});
     await Alumni.deleteMany({});
-    await GalleryImage.deleteMany({});
+    await Image.deleteMany({});
     
     // Insert new data
     await Event.insertMany(events);
     await Member.insertMany(members);
     await Alumni.insertMany(alumni);
-    await GalleryImage.insertMany(galleryImages);
+    await Image.insertMany(galleryImages);
 
     return NextResponse.json({
       message: 'Database seeded successfully!',

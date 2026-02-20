@@ -1,8 +1,8 @@
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import type { TGalleryImage } from "@/lib/definitions";
+import type { TImage } from "@/lib/definitions";
 import Image from "next/image";
 
-async function getImages(): Promise<TGalleryImage[]> {
+async function getImages(): Promise<TImage[]> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/gallery`, { cache: 'no-store' });
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary

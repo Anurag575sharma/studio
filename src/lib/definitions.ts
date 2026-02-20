@@ -1,11 +1,11 @@
 import type { models } from 'mongoose';
 
-export type TGalleryImage = {
+export type TImage = {
   _id: string;
   title: string;
   url: string;
   description?: string;
-  category?: string;
+  category?: 'Cultural' | 'Technical' | 'Celebration';
 };
 
 export type TMember = {

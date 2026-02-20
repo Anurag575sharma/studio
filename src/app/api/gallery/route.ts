@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/db-connect';
-import GalleryImage from '@/lib/models/GalleryImage';
+import Image from '@/lib/models/GalleryImage';
 import { unstable_noStore as noStore } from 'next/cache';
 
 export async function GET(request: Request) {
   noStore();
   try {
     await dbConnect();
-    const images = await GalleryImage.find({});
+    const images = await Image.find({});
     return NextResponse.json(images);
   } catch (error) {
      let errorMessage = 'An unknown error occurred';
