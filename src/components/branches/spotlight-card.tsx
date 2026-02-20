@@ -10,13 +10,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { Youtube, Instagram } from 'lucide-react';
+
+const iconMap = {
+  youtube: Youtube,
+  instagram: Instagram,
+};
 
 type SpotlightCardProps = {
   title: string;
   description: string;
   children: ReactNode;
   className?: string;
-  socials?: { href: string; icon: React.ElementType; label: string }[];
+  socials?: { href: string; iconName: keyof typeof iconMap; label: string }[];
   detailsContent: ReactNode;
 };
 
@@ -105,14 +111,17 @@ export function SpotlightCard({
           
           {socials && socials.length > 0 && (
             <div className="flex items-center gap-2">
-              {socials.map(({ href, icon: Icon, label }) => (
-                <Button key={label} variant="ghost" size="icon" asChild>
-                  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
-                    <Icon className="h-5 w-5 text-muted-foreground transition-colors hover:text-accent" />
-                    <span className="sr-only">{label}</span>
-                  </a>
-                </Button>
-              ))}
+              {socials.map(({ href, iconName, label }) => {
+                const Icon = iconMap[iconName];
+                return (
+                  <Button key={label} variant="ghost" size="icon" asChild>
+                    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+                      <Icon className="h-5 w-5 text-muted-foreground transition-colors hover:text-accent" />
+                      <span className="sr-only">{label}</span>
+                    </a>
+                  </Button>
+                );
+              })}
             </div>
           )}
         </div>

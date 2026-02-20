@@ -68,8 +68,8 @@ export default function BranchesPage() {
                 title="RangManch"
                 description="The official Filmmaking society of MANIT BHOPAL. We don't just capture moments; we craft narratives that resonate."
                 socials={[
-                  { href: 'https://youtube.com/@Rangmanch-NITBHOPAL', icon: Youtube, label: 'YouTube' },
-                  { href: 'https://instagram.com/rangmanch_nitb/', icon: Instagram, label: 'Instagram' }
+                  { href: 'https://youtube.com/@Rangmanch-NITBHOPAL', iconName: 'youtube', label: 'YouTube' },
+                  { href: 'https://instagram.com/rangmanch_nitb/', iconName: 'instagram', label: 'Instagram' }
                 ]}
                 detailsContent={rangManchDetails}
              >
@@ -86,8 +86,8 @@ export default function BranchesPage() {
                 title="Avantikulam"
                 description="A mission-driven project aimed at democratizing elite education for underprivileged students."
                 socials={[
-                  { href: 'https://youtube.com/@avantikulameducation5825', icon: Youtube, label: 'YouTube' },
-                  { href: 'https://www.instagram.com/_nitb_avantikulam_/', icon: Instagram, label: 'Instagram' }
+                  { href: 'https://youtube.com/@avantikulameducation5825', iconName: 'youtube', label: 'YouTube' },
+                  { href: 'https://www.instagram.com/_nitb_avantikulam_/', iconName: 'instagram', label: 'Instagram' }
                 ]}
                 detailsContent={avantikulamDetails}
              >
