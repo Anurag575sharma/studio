@@ -3,14 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TMember } from '@/lib/definitions';
 import { Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
-
-async function getMembers(): Promise<TMember[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/members`, { cache: 'no-store' });
-  if (!res.ok) {
-    throw new Error('Failed to fetch members');
-  }
-  return res.json();
-}
+import { getMembers } from '@/lib/data';
 
 export default async function MembersPage() {
   const members = await getMembers();

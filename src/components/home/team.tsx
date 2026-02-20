@@ -4,27 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
+import { getMembers } from '@/lib/data';
 import type { TMember } from '@/lib/definitions';
-import { unstable_noStore as noStore } from 'next/cache';
-import dbConnect from '@/lib/db-connect';
-import Member from '@/lib/models/Member';
-
-// This function now directly accesses the database.
-async function getCoreTeam(): Promise<TMember[]> {
-  noStore(); // Ensures fresh data on every request.
-  try {
-    await dbConnect(); // Connect to the database.
-    const coreMembers = await Member.find({ isCore: true }).limit(3).lean();
-    // Using lean() and then serializing is the correct way to pass data from Server Components.
-    return JSON.parse(JSON.stringify(coreMembers));
-  } catch (error) {
-    console.error('Failed to fetch core team members:', error);
-    return []; // Return an empty array on error.
-  }
-}
 
 export async function Team() {
-  const teamMembers = await getCoreTeam();
+  const allMembers: TMember[] = await getMembers();
+  const teamMembers = allMembers.filter((member) => member.isCore).slice(0, 3);
 
   return (
     <SectionWrapper glowColor="accent">
