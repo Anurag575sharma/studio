@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import dbConnect from '@/lib/db-connect';
-import Member from '@/lib/models/Member';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,11 +7,21 @@ import { Github, Linkedin } from 'lucide-react';
 import type { TMember } from '@/lib/definitions';
 import { unstable_noStore as noStore } from 'next/cache';
 
-async function getCoreTeam() {
+async function getCoreTeam(): Promise<TMember[]> {
   noStore();
-  await dbConnect();
-  const members = await Member.find({ isCore: true }).limit(3).lean();
-  return JSON.parse(JSON.stringify(members)) as TMember[];
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/members`, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error('Failed to fetch members for team section');
+      return [];
+    }
+    const allMembers: TMember[] = await res.json();
+    const coreMembers = allMembers.filter(member => member.isCore).slice(0, 3);
+    return coreMembers;
+  } catch (error) {
+    console.error('Error fetching core team:', error);
+    return [];
+  }
 }
 
 export async function Team() {
