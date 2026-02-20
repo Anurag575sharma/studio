@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { ChatbotWidget } from '@/components/chatbot/chatbot-widget';
 
 export const metadata: Metadata = {
   title: 'INSPIRE MANIT | Official Society Website',
@@ -39,6 +40,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <Toaster />
+        <ChatbotWidget />
       </body>
     </html>
   );
