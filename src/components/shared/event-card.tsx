@@ -20,7 +20,7 @@ type EventCardProps = {
 
 export function EventCard({ event, isPast = false }: EventCardProps) {
   return (
-    <Card className={cn('flex h-full flex-col overflow-hidden', isPast && 'opacity-70')}>
+    <Card className={cn('flex h-full flex-col overflow-hidden', !isPast && 'opacity-100', isPast && 'opacity-80')}>
       {event.imageUrl && (
         <div className="relative h-48 w-full">
           <Image src={event.imageUrl} alt={event.title} fill className="object-cover" />
@@ -41,7 +41,7 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
       </CardHeader>
       <CardContent className="flex-grow">
         <Accordion type="single" collapsible>
-          <AccordionItem value="item-1" className="border-none">
+          <AccordionItem value={event.title} className="border-none">
             <AccordionTrigger className="py-0 text-left text-sm text-muted-foreground hover:no-underline">
               Read more
             </AccordionTrigger>
