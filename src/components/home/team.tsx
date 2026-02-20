@@ -31,7 +31,7 @@ export async function Team() {
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {teamMembers.map((member, index) => (
+        {teamMembers.filter(member => member.imageUrl).map((member, index) => (
            <div
               key={member._id}
               className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500"

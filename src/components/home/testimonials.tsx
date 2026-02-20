@@ -36,8 +36,8 @@ export async function Testimonials() {
         className="mx-auto mt-12 w-full max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl"
       >
         <CarouselContent>
-          {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+          {testimonials.filter(testimonial => testimonial.imageUrl).map((testimonial) => (
+            <CarouselItem key={testimonial._id} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Card className="h-full">
                   <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
