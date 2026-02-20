@@ -43,7 +43,7 @@ export async function Team() {
           {teamMembers.map((member, index) => (
              <div
                 key={member._id}
-                className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500"
+                className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500 h-full"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
               <Card className="group overflow-hidden text-center h-full flex flex-col">
@@ -62,12 +62,16 @@ export async function Team() {
                       <p className="mt-1 text-primary">{member.role}</p>
                     </div>
                     <div className="mt-auto pt-4 flex justify-center gap-4">
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                        <Linkedin size={20} />
-                      </a>
-                       <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                        <Github size={20} />
-                      </a>
+                      {member.linkedin && (
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                          <Linkedin size={20} />
+                        </a>
+                      )}
+                      {member.github && (
+                        <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                          <Github size={20} />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </CardContent>

@@ -35,7 +35,7 @@ export default async function MembersPage() {
         {members.filter(member => member.image).map((member, index) => (
           <div
             key={member._id}
-            className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500"
+            className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500 h-full"
             style={{ animationDelay: `${index * 50}ms` }}
           >
             <Card className="group overflow-hidden text-center transition-all duration-300 hover:shadow-primary/20 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
