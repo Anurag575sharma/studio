@@ -3,7 +3,7 @@ import type { models } from 'mongoose';
 export type TGalleryImage = {
   _id: string;
   title: string;
-  imageUrl: string;
+  url: string;
   description?: string;
   category?: string;
 };
@@ -14,7 +14,7 @@ export type TMember = {
   role: string;
   year?: string;
   branch?: string;
-  imageUrl: string;
+  image: string;
   linkedin?: string;
   github?: string;
   instaId?: string;
@@ -26,7 +26,7 @@ export type TAlumni = {
   name: string;
   batch: string;
   testimonial: string;
-  imageUrl: string;
+  image: string;
   linkedin?: string;
   role?: string;
   company?: string;

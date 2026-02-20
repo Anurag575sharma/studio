@@ -7,7 +7,7 @@ export interface IAlumni extends Document {
   batch: string;
   branch?: string;
   testimonial: string;
-  imageUrl: string;
+  image: string;
   linkedin?: string;
 }
 
@@ -18,7 +18,7 @@ const AlumniSchema: Schema = new Schema({
   batch: { type: String, required: true },
   branch: { type: String },
   testimonial: { type: String, required: true },
-  imageUrl: { type: String, required: true },
+  image: { type: String, required: true },
   linkedin: { type: String },
 });
 

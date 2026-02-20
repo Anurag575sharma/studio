@@ -26,7 +26,7 @@ export default async function MembersPage() {
         </p>
       </div>
       <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {members.filter(member => member.imageUrl).map((member, index) => (
+        {members.filter(member => member.image).map((member, index) => (
           <div
             key={member._id}
             className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500"
@@ -36,7 +36,7 @@ export default async function MembersPage() {
               <CardContent className="p-0">
                 <div className="relative h-72 w-full">
                   <Image
-                    src={member.imageUrl}
+                    src={member.image}
                     alt={member.name}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"

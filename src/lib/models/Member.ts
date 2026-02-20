@@ -5,7 +5,7 @@ export interface IMember extends Document {
   role: string;
   year?: string;
   branch?: string;
-  imageUrl: string;
+  image: string;
   linkedin?: string;
   instaId?: string;
   github?: string;
@@ -17,7 +17,7 @@ const MemberSchema: Schema = new Schema({
   role: { type: String, required: true },
   year: { type: String },
   branch: { type: String },
-  imageUrl: { type: String, required: true },
+  image: { type: String, required: true },
   linkedin: { type: String },
   instaId: { type: String },
   github: { type: String },

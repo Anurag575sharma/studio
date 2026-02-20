@@ -27,10 +27,10 @@ export default async function GalleryPage() {
         </div>
 
         <div className="mt-16 columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>div:not(:first-child)]:mt-8">
-            {images.filter(image => image.imageUrl).map((image, index) => (
+            {images.filter(image => image.url).map((image, index) => (
                 <div key={image._id} className="group relative overflow-hidden rounded-lg break-inside-avoid shadow-lg animate-in fade-in-0 zoom-in-95 duration-500" style={{ animationDelay: `${index * 50}ms` }}>
                     <Image
-                        src={image.imageUrl}
+                        src={image.url}
                         alt={image.title}
                         width={600}
                         height={800}
