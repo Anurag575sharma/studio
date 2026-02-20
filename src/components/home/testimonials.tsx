@@ -63,9 +63,9 @@ export function Testimonials() {
         <CarouselContent>
           {testimonials.map((testimonial) => (
             <CarouselItem key={testimonial._id} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card className="h-full">
-                  <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
+              <div className="p-1 h-full">
+                <Card className="h-full flex flex-col">
+                  <CardContent className="flex flex-1 flex-col items-center justify-center p-6 text-center">
                     <Image
                       src={testimonial.image}
                       alt={testimonial.name}
