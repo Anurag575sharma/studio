@@ -46,19 +46,26 @@ export default async function AlumniPage() {
                 {person.role && person.company && (
                   <p className="text-sm text-primary">{person.role} @ {person.company}</p>
                 )}
-                <p className="text-sm text-muted-foreground">Batch of {person.year}</p>
-                <blockquote className="mt-4 flex-grow border-l-2 border-primary pl-4 text-left text-muted-foreground italic">
-                  {person.testimonial}
-                </blockquote>
+                <p className="text-sm text-muted-foreground">
+                  Batch of {person.year}
+                  {person.branch && ` | ${person.branch.toUpperCase()}`}
+                </p>
+                {person.testimonial && (
+                  <blockquote className="mt-4 flex-grow border-l-2 border-primary pl-4 text-left text-muted-foreground italic">
+                    &ldquo;{person.testimonial}&rdquo;
+                  </blockquote>
+                )}
                 <div className="mt-4 flex justify-center">
-                  <a
-                    href={person.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    <Linkedin size={20} />
-                  </a>
+                  {person.linkedin && (
+                    <a
+                      href={person.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      <Linkedin size={20} />
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>

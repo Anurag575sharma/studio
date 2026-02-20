@@ -25,7 +25,7 @@ export type TAlumni = {
   _id:string;
   name: string;
   year: string;
-  testimonial: string;
+  testimonial?: string;
   image: string;
   linkedin?: string;
   role?: string;

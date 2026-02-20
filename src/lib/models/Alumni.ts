@@ -6,7 +6,7 @@ export interface IAlumni extends Document {
   company?: string;
   year: string;
   branch?: string;
-  testimonial: string;
+  testimonial?: string;
   image: string;
   linkedin?: string;
 }
@@ -17,7 +17,7 @@ const AlumniSchema: Schema = new Schema({
   company: { type: String },
   year: { type: String, required: true },
   branch: { type: String },
-  testimonial: { type: String, required: true },
+  testimonial: { type: String },
   image: { type: String, required: true },
   linkedin: { type: String },
 });
