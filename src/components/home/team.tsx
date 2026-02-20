@@ -12,7 +12,7 @@ import { unstable_noStore as noStore } from 'next/cache';
 async function getCoreTeam() {
   noStore();
   await dbConnect();
-  const members = await Member.find({ isCore: true }).limit(4).lean();
+  const members = await Member.find({ isCore: true }).limit(3).lean();
   return JSON.parse(JSON.stringify(members)) as TMember[];
 }
 
@@ -30,7 +30,7 @@ export async function Team() {
         </p>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {teamMembers.filter(member => member.image).map((member, index) => (
            <div
               key={member._id}
