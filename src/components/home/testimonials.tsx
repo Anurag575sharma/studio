@@ -24,8 +24,8 @@ export function Testimonials() {
     {
       _id: '2',
       name: 'Anurag Sharma',
-      year: '2025',
-      company: 'JPMorgan Chase',
+      year: '2026',
+      company: 'Amazon',
       image:
         'https://res.cloudinary.com/dauf7v7uz/image/upload/v1770404586/1758282729902_renysy.jpg',
       testimonial:
