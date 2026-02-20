@@ -36,7 +36,7 @@ export async function Testimonials() {
         className="mx-auto mt-12 w-full max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl"
       >
         <CarouselContent>
-          {testimonials.filter(testimonial => testimonial.image && testimonial.testimonial).map((testimonial) => (
+          {testimonials.filter(testimonial => testimonial.image).map((testimonial) => (
             <CarouselItem key={testimonial._id} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Card className="h-full">

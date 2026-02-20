@@ -18,7 +18,7 @@ export default function BranchesPage() {
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
              <SpotlightCard
                 title="RangManch"
-                description="Visionaries Behind the Lens. The official Filmmaking society of MANIT BHOPAL. We don't just capture moments; we craft narratives that resonate. In collaboration with INSPIRE MANIT, we push the boundaries of student cinema."
+                description="The official Filmmaking society of MANIT BHOPAL. We don't just capture moments; we craft narratives that resonate. In collaboration with INSPIRE MANIT, we push the boundaries of student cinema."
                 socials={[
                   { href: 'https://youtube.com/@Rangmanch-NITBHOPAL', icon: Youtube, label: 'YouTube' },
                   { href: 'https://instagram.com/rangmanch_nitb/', icon: Instagram, label: 'Instagram' }
@@ -35,7 +35,7 @@ export default function BranchesPage() {
 
              <SpotlightCard
                 title="Avantikulam"
-                description="Igniting Potential. Avantikulam is a mission-driven project aimed at democratizing elite education. Providing free, high-quality resources for NTSE, Olympiad, and JEE/NEET aspirants from underprivileged backgrounds."
+                description="Avantikulam is a mission-driven project aimed at democratizing elite education. Providing free, high-quality resources for NTSE, Olympiad, and JEE/NEET aspirants from underprivileged backgrounds."
                 socials={[
                   { href: 'https://youtube.com/@avantikulameducation5825', icon: Youtube, label: 'YouTube' },
                   { href: 'https://instagram.com/nitb_avantikulam/', icon: Instagram, label: 'Instagram' }
