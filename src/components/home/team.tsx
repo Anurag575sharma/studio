@@ -6,18 +6,17 @@ import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
 import type { TMember } from '@/lib/definitions';
 import { unstable_noStore as noStore } from 'next/cache';
+import dbConnect from '@/lib/db-connect';
+import Member from '@/lib/models/Member';
 
 async function getCoreTeam(): Promise<TMember[]> {
   noStore();
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/members`, { cache: 'no-store' });
-    if (!res.ok) {
-      console.error('Failed to fetch members for team section');
-      return [];
-    }
-    const allMembers: TMember[] = await res.json();
-    const coreMembers = allMembers.filter(member => member.isCore).slice(0, 3);
-    return coreMembers;
+    await dbConnect();
+    const coreMembers = await Member.find({ isCore: true }).limit(3).lean();
+    // The result from lean() will have ObjectId for _id, which is not serializable for client components props.
+    // We can use JSON stringify and parse to convert it to a string.
+    return JSON.parse(JSON.stringify(coreMembers));
   } catch (error) {
     console.error('Error fetching core team:', error);
     return [];
