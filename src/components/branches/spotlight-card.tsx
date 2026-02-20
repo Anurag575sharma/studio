@@ -3,6 +3,13 @@ import { useRef, useState, type MouseEvent, type ReactNode } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 type SpotlightCardProps = {
   title: string;
@@ -10,6 +17,7 @@ type SpotlightCardProps = {
   children: ReactNode;
   className?: string;
   socials?: { href: string; icon: React.ElementType; label: string }[];
+  detailsContent: ReactNode;
 };
 
 export function SpotlightCard({
@@ -18,6 +26,7 @@ export function SpotlightCard({
   children,
   className,
   socials,
+  detailsContent,
 }: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -80,7 +89,20 @@ export function SpotlightCard({
             {children}
         </div>
         <div className="flex items-center justify-between">
-          <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">Learn More</Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">Learn More</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle className="text-2xl text-accent">{title}</DialogTitle>
+              </DialogHeader>
+              <div className="mt-4 space-y-4">
+                {detailsContent}
+              </div>
+            </DialogContent>
+          </Dialog>
+          
           {socials && socials.length > 0 && (
             <div className="flex items-center gap-2">
               {socials.map(({ href, icon: Icon, label }) => (
