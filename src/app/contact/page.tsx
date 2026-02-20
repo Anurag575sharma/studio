@@ -1,6 +1,12 @@
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Register',
+  description: 'Join the core team of INSPIRE MANIT. We are looking for passionate individuals to contribute to our mission.',
+};
 
 export default function ContactPage() {
   return (

@@ -1,6 +1,12 @@
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import type { TImage } from "@/lib/definitions";
 import Image from "next/image";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Gallery',
+  description: 'A visual journey through INSPIRE MANIT\'s events, workshops, and team activities.',
+};
 
 async function getImages(): Promise<TImage[]> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/gallery`, { cache: 'no-store' });

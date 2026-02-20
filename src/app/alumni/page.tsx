@@ -3,6 +3,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TAlumni } from '@/lib/definitions';
 import { Linkedin } from 'lucide-react';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Alumni',
+  description: 'Meet the honorable and successful alumni of INSPIRE MANIT and read their testimonials.',
+};
 
 async function getAlumni(): Promise<TAlumni[]> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/alumni`, { cache: 'no-store' });

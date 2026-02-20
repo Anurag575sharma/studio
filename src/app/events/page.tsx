@@ -1,6 +1,12 @@
 import { EventCard } from '@/components/shared/event-card';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import { events as allEvents } from '@/lib/seed-data';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Events',
+  description: 'Stay updated with upcoming and past events from INSPIRE MANIT, including technical workshops, cultural meets, and competitions.',
+};
 
 export default function EventsPage() {
   const upcomingEvents = allEvents.filter((e) => e.isUpcoming);

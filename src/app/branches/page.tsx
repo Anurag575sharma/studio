@@ -4,6 +4,12 @@ import Image from "next/image";
 import { SpotlightCard } from "@/components/branches/spotlight-card";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
 import { Youtube, Instagram, ExternalLink } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Branches',
+  description: 'Explore the specialized wings of INSPIRE MANIT: RangManch for filmmaking and Avantikulam for democratizing education.',
+};
 
 export default function BranchesPage() {
   const rangManchDetails = (

@@ -6,6 +6,12 @@ import Image from 'next/image';
 import dbConnect from '@/lib/db-connect';
 import Member from '@/lib/models/Member';
 import { unstable_noStore as noStore } from 'next/cache';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Team',
+  description: 'Meet the talented and dedicated core team and members of INSPIRE MANIT.',
+};
 
 async function getMembers(): Promise<TMember[]> {
   noStore();

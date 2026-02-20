@@ -1,5 +1,11 @@
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about the vision and mission of INSPIRE MANIT, a student society dedicated to fostering wisdom, values, and principle-centered life among youths.',
+};
 
 export default function AboutPage() {
   return (
