@@ -29,7 +29,7 @@ export function UpcomingEvents() {
               className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <EventCard event={event} />
+              <EventCard event={event} cardId={`upcoming-home-${index}`} />
             </div>
           ))}
         </div>

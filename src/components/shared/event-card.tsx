@@ -16,12 +16,13 @@ import Image from 'next/image';
 type EventCardProps = {
   event: TEvent;
   isPast?: boolean;
+  cardId: string;
 };
 
-export function EventCard({ event, isPast = false }: EventCardProps) {
+export function EventCard({ event, isPast = false, cardId }: EventCardProps) {
   return (
-    <Card className={cn('flex h-full flex-col overflow-hidden', !isPast && 'opacity-100', isPast && 'opacity-80')}>
-      {event.imageUrl && (
+    <Card className={cn('flex h-full flex-col overflow-hidden', isPast ? 'opacity-80' : 'opacity-100')}>
+      {event.imageUrl && event.imageUrl.startsWith('http') && (
         <div className="relative h-48 w-full">
           <Image src={event.imageUrl} alt={event.title} fill className="object-cover" />
         </div>
@@ -41,9 +42,9 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
       </CardHeader>
       <CardContent className="flex-grow">
         <Accordion type="single" collapsible>
-          <AccordionItem value={event.title} className="border-none">
-            <AccordionTrigger className="py-0 text-left text-sm text-muted-foreground hover:no-underline">
-              Read more
+          <AccordionItem value={cardId} className="border-none">
+            <AccordionTrigger className="py-0 text-left text-sm text-muted-foreground hover:no-underline [&[data-state=open]>span]:hidden">
+              <span>Read more</span>
             </AccordionTrigger>
             <AccordionContent className="pt-4 text-base text-muted-foreground">
               {event.description}
