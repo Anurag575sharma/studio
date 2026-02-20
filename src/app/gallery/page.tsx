@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 async function getImages(): Promise<TImage[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/gallery`, { cache: 'no-store' });
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in';
+  const res = await fetch(`${baseUrl}/api/gallery`, { cache: 'no-store' });
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');

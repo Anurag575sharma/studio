@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 };
 
 async function getAlumni(): Promise<TAlumni[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/alumni`, { cache: 'no-store' });
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in';
+  const res = await fetch(`${baseUrl}/api/alumni`, { cache: 'no-store' });
   if (!res.ok) {
     throw new Error('Failed to fetch alumni');
   }

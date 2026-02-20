@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/footer';
 import { ChatbotWidget } from '@/components/chatbot/chatbot-widget';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in'),
   title: {
     default: 'INSPIRE MANIT | Official Society Website',
     template: '%s | INSPIRE MANIT',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'INSPIRE MANIT | Official Society Website',
     description: 'The official website of INSPIRE MANIT, a student society at MANIT Bhopal.',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in',
     siteName: 'INSPIRE MANIT',
     images: [
       {
