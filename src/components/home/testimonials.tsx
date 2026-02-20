@@ -33,12 +33,12 @@ export function Testimonials() {
     },
     {
       _id: '3',
-      name: 'Aditi Rao',
-      year: '2020',
-      company: 'Google',
-      image: 'https://picsum.photos/seed/9/400/400',
+      name: 'Shishir Mishra',
+      year: '2025',
+      company: 'PSU',
+      image: 'https://res.cloudinary.com/dauf7v7uz/image/upload/v1770404994/1747887154996_vnkfzv.jpg',
       testimonial:
-        'My journey into tech began at INSPIRE. The society’s unique focus on both cutting-edge skills and the principle-centered life taught in the Bhagavad Gita was instrumental for my growth.',
+        'Being part of INSPIRE was a transformative experience. The society provides a unique blend of technical knowledge and spiritual wisdom from the Bhagavad Gita, which has been crucial for my professional and personal development.',
     },
   ];
 
