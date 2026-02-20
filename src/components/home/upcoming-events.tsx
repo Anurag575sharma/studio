@@ -17,7 +17,7 @@ export function UpcomingEvents() {
           Upcoming Events
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Join our upcoming workshops, competitions, and seminars.
+          Stay updated with the latest workshops, competitions, and cultural meets in our society.
         </p>
       </div>
 

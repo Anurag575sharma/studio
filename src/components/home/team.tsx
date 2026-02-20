@@ -26,7 +26,7 @@ export async function Team() {
           Meet the Core Team
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          The driving force behind INSPIRE MANIT&apos;s success and initiatives.
+          The dedicated students working behind the scenes to bring you the best events and technical resources at MANIT.
         </p>
       </div>
 

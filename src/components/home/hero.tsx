@@ -35,13 +35,10 @@ export function Hero() {
           </div>
 
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            INSPIRE MANIT
+            Aspire To Inspire Until You Expire
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            The official society of MANIT Bhopal dedicated to fostering
-            <span className="font-semibold text-foreground"> Innovation</span>,
-            honing <span className="font-semibold text-foreground">Skills</span>, and achieving peak
-            <span className="font-semibold text-foreground"> Performance</span>.
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
+            The official Society of MANIT Bhopal. Defining Culture, One Story at a Time. We bridge the gap between technical excellence and artistic expression.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button asChild size="lg">

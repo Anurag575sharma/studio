@@ -1,21 +1,5 @@
 import Image from 'next/image';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
-import { CheckCircle } from 'lucide-react';
-
-const features = [
-  {
-    name: 'Innovation Hub',
-    description: 'We encourage and facilitate innovative projects and ideas, providing resources and mentorship.',
-  },
-  {
-    name: 'Skill Development',
-    description: 'Through workshops and events, we help members acquire and master new technical and soft skills.',
-  },
-  {
-    name: 'Collaborative Community',
-    description: 'A vibrant community of thinkers, creators, and leaders working together to solve real-world problems.',
-  },
-];
 
 export function About() {
   return (
@@ -25,22 +9,12 @@ export function About() {
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Who We Are
           </h2>
+          <blockquote className="mt-6 border-l-4 border-primary pl-4 text-xl italic text-foreground">
+            &ldquo;We voluntarily work to bejewel youths with wisdom and values to enable them to lead a principle-centered life.&rdquo;
+          </blockquote>
           <p className="mt-4 text-lg text-muted-foreground">
-            INSPIRE MANIT is more than just a college society; it&apos;s a launchpad for future innovators and leaders. We believe in learning by doing, and we provide a platform for students to explore their passions, build amazing things, and grow both personally and professionally.
+            We organize technical camps and cultural events focusing on the overall growth and well-being of students while promoting Indian culture and its diversity.
           </p>
-          <dl className="mt-10 space-y-8">
-            {features.map((feature) => (
-              <div key={feature.name} className="flex gap-4">
-                <dt>
-                  <CheckCircle className="h-8 w-8 text-primary" />
-                </dt>
-                <dd>
-                  <h3 className="text-lg font-semibold">{feature.name}</h3>
-                  <p className="mt-1 text-base text-muted-foreground">{feature.description}</p>
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
         <div className="relative h-96 w-full animate-in fade-in-0 zoom-in-95 duration-500">
            <Image

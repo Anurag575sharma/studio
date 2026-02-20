@@ -27,6 +27,9 @@ export default function ContactPage() {
             Register for Core Team
           </Link>
         </Button>
+        <p className="mt-8 text-sm text-muted-foreground">
+          Let&apos;s get in touch. Or just contact us manually on <a href="mailto:inspiremanit@gmail.com" className="underline hover:text-primary">inspiremanit@gmail.com</a>
+        </p>
       </div>
     </SectionWrapper>
   );

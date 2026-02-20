@@ -17,7 +17,7 @@ export default function BranchesPage() {
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
              <SpotlightCard
                 title="RangManch"
-                description="The filmmaking and creative arts wing. RangManch is where stories come to life through film, photography, and visual arts. We handle all creative aspects of INSPIRE's events."
+                description="Visionaries Behind the Lens. The official Filmmaking society of MANIT BHOPAL. We don't just capture moments; we craft narratives that resonate. In collaboration with INSPIRE MANIT, we push the boundaries of student cinema."
              >
                 <Image
                     src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601603/rangManchLogo_d12i1b.jpg"
@@ -30,7 +30,7 @@ export default function BranchesPage() {
 
              <SpotlightCard
                 title="Avantikulam"
-                description="Our social initiative dedicated to education for all. Avantikulam volunteers work to bridge educational gaps in the community, teaching and mentoring underprivileged students."
+                description="Igniting Potential. Avantikulam is a mission-driven project aimed at democratizing elite education. Providing free, high-quality resources for NTSE, Olympiad, and JEE/NEET aspirants from underprivileged backgrounds."
              >
                  <Image
                     src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601496/avantikulamLogo_hrywz9.jpg"

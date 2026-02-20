@@ -124,7 +124,7 @@ export const alumni = [
       branch: "ELECTRICAL",
       image: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1770452861/1768329126791_h8cimj.jpg",
       linkedin: "https://www.linkedin.com/in/harshlodhi08/",
-      testimonial: "INSPIRE MANIT provided a great platform to learn and grow. The community is amazing!"
+      testimonial: "INSPIRE MANIT provided a great platform to learn and grow. It shaped my life with the wisdom of Bhagavad Gita and sharpened my technical skills. The community is amazing!"
   },
   {
       name: "Anurag Sharma",
@@ -134,38 +134,43 @@ export const alumni = [
       branch: "CSE",
       image: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1770404586/1758282729902_renysy.jpg",
       linkedin: "https://www.linkedin.com/in/anuragsharma",
-      testimonial: "My time at INSPIRE was transformative. It shaped my leadership skills and prepared me for the corporate world."
+      testimonial: "My time at INSPIRE was transformative. It shaped my leadership skills, provided deep insights from the Bhagavad Gita, and prepared me for the corporate world."
   },
-  { name: 'Aditi Rao', batch: '2020', testimonial: 'INSPIRE MANIT was where my journey into tech truly began. The projects and the community were instrumental in my career growth.', image: 'https://picsum.photos/seed/9/400/400', linkedin: '#', role: 'Software Engineer', company: 'Google', branch: 'CSE' },
-  { name: 'Vikram Mehta', batch: '2019', testimonial: 'The leadership experience I gained at INSPIRE has been invaluable. It taught me how to manage teams and drive projects to completion.', image: 'https://picsum.photos/seed/10/400/400', linkedin: '#', role: 'Product Manager', company: 'Microsoft', branch: 'ME' },
+  { name: 'Aditi Rao', batch: '2020', testimonial: 'INSPIRE MANIT was where my journey into tech truly began. The blend of technical projects and wisdom from the Gita was instrumental in my career and personal growth.', image: 'https://picsum.photos/seed/9/400/400', linkedin: '#', role: 'Software Engineer', company: 'Google', branch: 'CSE' },
+  { name: 'Vikram Mehta', batch: '2019', testimonial: 'The leadership experience I gained at INSPIRE has been invaluable. It taught me how to manage teams, drive projects, and apply timeless principles from the Bhagavad Gita to solve modern problems.', image: 'https://picsum.photos/seed/10/400/400', linkedin: '#', role: 'Product Manager', company: 'Microsoft', branch: 'ME' },
 ];
 
 export const galleryImages = [
   {
+    _id: "1",
     title: "Orientation 2023",
     description: "Inspire orientation 2023 for the freshers batch.",
     url: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1769793814/IMG-20221114-WA0023_detagz.jpg",
     category: "Cultural",
   },
   {
+    _id: "2",
     title: "TechSpurti 2023",
     description: "Techno-spiritual camp at IIT Kanpur.",
     url: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1769795273/IMG_20230312_113708_pxbtnq.jpg",
     category: "Technical",
   },
   { 
+    _id: "3",
     title: 'Team Spirit',
     description: 'Celebrating a successful event.',
     url: 'https://picsum.photos/seed/gallery1/600/800',
     category: 'Celebration' 
   },
   { 
+    _id: "4",
     title: 'Workshop Session',
     description: 'Deep dive into web development.',
     url: 'https://picsum.photos/seed/gallery2/800/600',
     category: 'Technical' 
   },
    { 
+    _id: "5",
     title: 'Cultural Night',
     description: 'A night of music and dance.',
     url: 'https://picsum.photos/seed/gallery3/800/600',

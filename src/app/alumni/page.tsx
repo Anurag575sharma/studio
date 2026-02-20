@@ -19,10 +19,10 @@ export default async function AlumniPage() {
     <SectionWrapper>
       <div className="text-center">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-          Our Esteemed Alumni
+          The Hall of Heritage
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Celebrating the achievements of those who came before us.
+          Meet the honorable alumni of our society.
         </p>
       </div>
 
