@@ -3,7 +3,7 @@ import dbConnect from '@/lib/db-connect';
 import Event from '@/lib/models/Event';
 import Member from '@/lib/models/Member';
 import Alumni from '@/lib/models/Alumni';
-import Image from '@/lib/models/GalleryImage';
+import Image from '@/lib/models/Image';
 import { events, members, alumni, galleryImages } from '@/lib/seed-data';
 
 export async function GET(request: Request) {

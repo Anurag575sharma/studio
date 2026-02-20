@@ -17,5 +17,4 @@ const ImageSchema: Schema = new Schema({
   },
 }, { timestamps: true });
 
-// Changed model name to 'Image' to match the 'images' collection in the database.
 export default mongoose.models.Image || mongoose.model<IImage>('Image', ImageSchema);

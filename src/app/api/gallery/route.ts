@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/db-connect';
-import Image from '@/lib/models/GalleryImage';
+import Image from '@/lib/models/Image';
 import { unstable_noStore as noStore } from 'next/cache';
 
 export async function GET(request: Request) {

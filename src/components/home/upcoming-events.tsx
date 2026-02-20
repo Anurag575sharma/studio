@@ -1,24 +1,14 @@
 import Link from 'next/link';
-import dbConnect from '@/lib/db-connect';
-import Event from '@/lib/models/Event';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import { EventCard } from '@/components/shared/event-card';
 import { Button } from '@/components/ui/button';
-import type { TEvent } from '@/lib/definitions';
-import { unstable_noStore as noStore } from 'next/cache';
+import { events as allEvents } from '@/lib/seed-data';
 
-async function getUpcomingEvents() {
-  noStore();
-  await dbConnect();
-  const events = await Event.find({ isUpcoming: true })
-    .sort({ date: 1 })
-    .limit(3)
-    .lean();
-  return JSON.parse(JSON.stringify(events)) as TEvent[];
-}
-
-export async function UpcomingEvents() {
-  const events = await getUpcomingEvents();
+export function UpcomingEvents() {
+  const events = allEvents
+    .filter((event) => event.isUpcoming)
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .slice(0, 3);
 
   return (
     <SectionWrapper glowColor="accent">
@@ -35,7 +25,7 @@ export async function UpcomingEvents() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {events.map((event, index) => (
             <div
-              key={event._id}
+              key={event.title}
               className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500"
               style={{ animationDelay: `${index * 150}ms` }}
             >

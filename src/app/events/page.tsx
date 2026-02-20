@@ -1,19 +1,10 @@
 import { EventCard } from '@/components/shared/event-card';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
-import type { TEvent } from '@/lib/definitions';
+import { events as allEvents } from '@/lib/seed-data';
 
-async function getEvents(): Promise<TEvent[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/events`, { cache: 'no-store' });
-  if (!res.ok) {
-    throw new Error('Failed to fetch events');
-  }
-  return res.json();
-}
-
-export default async function EventsPage() {
-  const events = await getEvents();
-  const upcomingEvents = events.filter((e) => e.isUpcoming);
-  const pastEvents = events.filter((e) => !e.isUpcoming);
+export default function EventsPage() {
+  const upcomingEvents = allEvents.filter((e) => e.isUpcoming);
+  const pastEvents = allEvents.filter((e) => !e.isUpcoming);
 
   return (
     <>
@@ -34,7 +25,7 @@ export default async function EventsPage() {
           {upcomingEvents.length > 0 ? (
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {upcomingEvents.map((event) => (
-                <EventCard key={event._id} event={event} />
+                <EventCard key={event.title} event={event} />
               ))}
             </div>
           ) : (
@@ -51,7 +42,7 @@ export default async function EventsPage() {
           {pastEvents.length > 0 ? (
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {pastEvents.map((event) => (
-                <EventCard key={event._id} event={event} isPast />
+                <EventCard key={event.title} event={event} isPast />
               ))}
             </div>
           ) : (
