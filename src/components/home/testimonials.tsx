@@ -1,21 +1,46 @@
-import dbConnect from '@/lib/db-connect';
-import Alumni from '@/lib/models/Alumni';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import type { TAlumni } from '@/lib/definitions';
-import { unstable_noStore as noStore } from 'next/cache';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
-async function getAlumniTestimonials() {
-  noStore();
-  await dbConnect();
-  const alumni = await Alumni.find({}).limit(5).lean();
-  return JSON.parse(JSON.stringify(alumni)) as TAlumni[];
-}
-
-export async function Testimonials() {
-  const testimonials = await getAlumniTestimonials();
+export function Testimonials() {
+  const testimonials = [
+    {
+      _id: '1',
+      name: 'Harsh Lodhi',
+      batch: '2024',
+      company: 'Qubits',
+      image:
+        'https://res.cloudinary.com/dauf7v7uz/image/upload/v1770452861/1768329126791_h8cimj.jpg',
+      testimonial:
+        'INSPIRE MANIT was a game-changer. It perfectly blended technical skill development with the timeless wisdom of the Bhagavad Gita, giving me a foundation for both my career and my life.',
+    },
+    {
+      _id: '2',
+      name: 'Anurag Sharma',
+      batch: '2025',
+      company: 'JPMorgan Chase',
+      image:
+        'https://res.cloudinary.com/dauf7v7uz/image/upload/v1770404586/1758282729902_renysy.jpg',
+      testimonial:
+        'Leading INSPIRE was an incredible journey. It taught me to balance technical projects with spiritual values, a lesson from the Gita that I apply daily in the corporate world.',
+    },
+    {
+      _id: '3',
+      name: 'Aditi Rao',
+      batch: '2020',
+      company: 'Google',
+      image: 'https://picsum.photos/seed/9/400/400',
+      testimonial:
+        'My journey into tech began at INSPIRE. The society’s unique focus on both cutting-edge skills and the principle-centered life taught in the Bhagavad Gita was instrumental for my growth.',
+    },
+  ];
 
   return (
     <SectionWrapper>
@@ -30,13 +55,13 @@ export async function Testimonials() {
 
       <Carousel
         opts={{
-          align: "start",
+          align: 'start',
           loop: true,
         }}
         className="mx-auto mt-12 w-full max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl"
       >
         <CarouselContent>
-          {testimonials.filter(testimonial => testimonial.image).map((testimonial) => (
+          {testimonials.map((testimonial) => (
             <CarouselItem key={testimonial._id} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Card className="h-full">
@@ -53,7 +78,12 @@ export async function Testimonials() {
                     </blockquote>
                     <footer className="mt-4">
                       <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">Batch of {testimonial.batch}</p>
+                      {testimonial.company && (
+                        <p className="text-sm text-primary">{testimonial.company}</p>
+                      )}
+                      <p className="text-sm text-muted-foreground">
+                        Batch of {testimonial.batch}
+                      </p>
                     </footer>
                   </CardContent>
                 </Card>
