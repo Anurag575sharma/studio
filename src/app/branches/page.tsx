@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SpotlightCard } from "@/components/branches/spotlight-card";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
+import { Youtube, Instagram } from 'lucide-react';
 
 export default function BranchesPage() {
   return (
@@ -18,6 +19,10 @@ export default function BranchesPage() {
              <SpotlightCard
                 title="RangManch"
                 description="Visionaries Behind the Lens. The official Filmmaking society of MANIT BHOPAL. We don't just capture moments; we craft narratives that resonate. In collaboration with INSPIRE MANIT, we push the boundaries of student cinema."
+                socials={[
+                  { href: 'https://youtube.com/@Rangmanch-NITBHOPAL', icon: Youtube, label: 'YouTube' },
+                  { href: 'https://instagram.com/rangmanch_nitb/', icon: Instagram, label: 'Instagram' }
+                ]}
              >
                 <Image
                     src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601603/rangManchLogo_d12i1b.jpg"
@@ -31,6 +36,10 @@ export default function BranchesPage() {
              <SpotlightCard
                 title="Avantikulam"
                 description="Igniting Potential. Avantikulam is a mission-driven project aimed at democratizing elite education. Providing free, high-quality resources for NTSE, Olympiad, and JEE/NEET aspirants from underprivileged backgrounds."
+                socials={[
+                  { href: 'https://youtube.com/@avantikulameducation5825', icon: Youtube, label: 'YouTube' },
+                  { href: 'https://instagram.com/nitb_avantikulam/', icon: Instagram, label: 'Instagram' }
+                ]}
              >
                  <Image
                     src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601496/avantikulamLogo_hrywz9.jpg"

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Linkedin, Instagram, Youtube, Facebook, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
@@ -6,19 +6,29 @@ import Image from 'next/image';
 export function Footer() {
   const socialLinks = [
     {
-      href: '#',
-      icon: Twitter,
-      label: 'Twitter',
-    },
-    {
-      href: '#',
-      icon: Github,
-      label: 'GitHub',
-    },
-    {
-      href: '#',
+      href: 'https://linkedin.com/company/inspiremanit/',
       icon: Linkedin,
       label: 'LinkedIn',
+    },
+    {
+      href: 'https://instagram.com/inspiremanit/',
+      icon: Instagram,
+      label: 'Instagram',
+    },
+    {
+      href: 'https://youtube.com/@inspiremanit',
+      icon: Youtube,
+      label: 'YouTube',
+    },
+     {
+      href: 'https://facebook.com/inspiremanit/',
+      icon: Facebook,
+      label: 'Facebook',
+    },
+     {
+      href: 'mailto:inspiremanit@gmail.com',
+      icon: Mail,
+      label: 'Email',
     },
   ];
 

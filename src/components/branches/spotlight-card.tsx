@@ -9,6 +9,7 @@ type SpotlightCardProps = {
   description: string;
   children: ReactNode;
   className?: string;
+  socials?: { href: string; icon: React.ElementType; label: string }[];
 };
 
 export function SpotlightCard({
@@ -16,6 +17,7 @@ export function SpotlightCard({
   description,
   children,
   className,
+  socials,
 }: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -77,7 +79,21 @@ export function SpotlightCard({
         <div className="h-48 w-full overflow-hidden rounded-md">
             {children}
         </div>
-        <Button variant="outline" className="mt-4 border-accent text-accent hover:bg-accent hover:text-accent-foreground">Learn More</Button>
+        <div className="flex items-center justify-between">
+          <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">Learn More</Button>
+          {socials && socials.length > 0 && (
+            <div className="flex items-center gap-2">
+              {socials.map(({ href, icon: Icon, label }) => (
+                <Button key={label} variant="ghost" size="icon" asChild>
+                  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+                    <Icon className="h-5 w-5 text-muted-foreground transition-colors hover:text-accent" />
+                    <span className="sr-only">{label}</span>
+                  </a>
+                </Button>
+              ))}
+            </div>
+          )}
+        </div>
       </CardContent>
     </Card>
   );

@@ -27,7 +27,7 @@ export default async function AlumniPage() {
       </div>
 
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {alumni.filter(person => person.image).map((person, index) => (
+        {alumni.filter(person => person.image && person.testimonial).map((person, index) => (
           <div
             key={person._id}
             className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500"
