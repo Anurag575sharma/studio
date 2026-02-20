@@ -29,7 +29,7 @@ export function Hero() {
                 alt="Inspire MANIT Logo"
                 width={96}
                 height={96}
-                className="h-24 w-24 rounded-md"
+                className="h-24 w-24 rounded-full"
               />
             </div>
           </div>
