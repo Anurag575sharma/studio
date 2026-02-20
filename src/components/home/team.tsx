@@ -6,26 +6,26 @@ import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
 import type { TMember } from '@/lib/definitions';
+import dbConnect from '@/lib/db-connect';
+import Member from '@/lib/models/Member';
+import { unstable_noStore as noStore } from 'next/cache';
 
-async function getMembers(): Promise<TMember[]> {
+// This function now fetches data directly from the database.
+async function getCoreMembers(): Promise<TMember[]> {
+  noStore(); // Ensures the data is fresh on every request.
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/members`, {
-      cache: 'no-store',
-    });
-    if (!res.ok) {
-      console.error('Failed to fetch members');
-      return [];
-    }
-    return res.json();
+    await dbConnect(); // Connect to the database.
+    const members = await Member.find({ isCore: true }).limit(3).lean();
+    // The data from mongoose is not a plain object, so we need to serialize it.
+    return JSON.parse(JSON.stringify(members));
   } catch (error) {
-    console.error('Failed to fetch members:', error);
+    console.error('Failed to fetch members directly:', error);
     return [];
   }
 }
 
 export async function Team() {
-  const allMembers: TMember[] = await getMembers();
-  const teamMembers = allMembers.filter((member) => member.isCore).slice(0, 3);
+  const teamMembers = await getCoreMembers();
 
   return (
     <SectionWrapper glowColor="accent">

@@ -3,17 +3,18 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TMember } from '@/lib/definitions';
 import { Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
+import dbConnect from '@/lib/db-connect';
+import Member from '@/lib/models/Member';
+import { unstable_noStore as noStore } from 'next/cache';
 
 async function getMembers(): Promise<TMember[]> {
+  noStore();
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/members`, { cache: 'no-store' });
-    if (!res.ok) {
-      console.error('Failed to fetch members from API');
-      return [];
-    }
-    return res.json();
+    await dbConnect();
+    const members = await Member.find({}).sort({ isCore: -1, name: 1 }).lean();
+    return JSON.parse(JSON.stringify(members));
   } catch (error) {
-    console.error('Error fetching members:', error);
+    console.error('Error fetching members directly:', error);
     return [];
   }
 }
