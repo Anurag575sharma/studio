@@ -3,7 +3,20 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TMember } from '@/lib/definitions';
 import { Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
-import { getMembers } from '@/lib/data';
+
+async function getMembers(): Promise<TMember[]> {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/members`, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error('Failed to fetch members from API');
+      return [];
+    }
+    return res.json();
+  } catch (error) {
+    console.error('Error fetching members:', error);
+    return [];
+  }
+}
 
 export default async function MembersPage() {
   const members = await getMembers();
@@ -41,12 +54,16 @@ export default async function MembersPage() {
                     <p className="mt-1 text-primary">{member.role}</p>
                   </div>
                    <div className="mt-auto pt-4 flex justify-center gap-4">
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                      <Linkedin size={20} />
-                    </a>
-                     <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                      <Github size={20} />
-                    </a>
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Linkedin size={20} />
+                      </a>
+                    )}
+                     {member.github && (
+                       <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Github size={20} />
+                      </a>
+                     )}
                   </div>
                 </div>
               </CardContent>

@@ -1,11 +1,27 @@
+
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
-import { getMembers } from '@/lib/data';
 import type { TMember } from '@/lib/definitions';
+
+async function getMembers(): Promise<TMember[]> {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/members`, {
+      cache: 'no-store',
+    });
+    if (!res.ok) {
+      console.error('Failed to fetch members');
+      return [];
+    }
+    return res.json();
+  } catch (error) {
+    console.error('Failed to fetch members:', error);
+    return [];
+  }
+}
 
 export async function Team() {
   const allMembers: TMember[] = await getMembers();
