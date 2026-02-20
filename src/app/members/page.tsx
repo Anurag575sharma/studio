@@ -32,8 +32,8 @@ export default async function MembersPage() {
             className="animate-in fade-in-0 slide-in-from-bottom-10 duration-500"
             style={{ animationDelay: `${index * 50}ms` }}
           >
-            <Card className="group overflow-hidden text-center transition-all duration-300 hover:shadow-primary/20 hover:shadow-2xl hover:-translate-y-2">
-              <CardContent className="p-0">
+            <Card className="group overflow-hidden text-center transition-all duration-300 hover:shadow-primary/20 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
+              <CardContent className="p-0 flex flex-col flex-1">
                 <div className="relative h-72 w-full">
                   <Image
                     src={member.image}
@@ -42,10 +42,12 @@ export default async function MembersPage() {
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="mt-1 text-primary">{member.role}</p>
-                   <div className="mt-4 flex justify-center gap-4">
+                <div className="p-6 flex flex-col flex-1">
+                  <div>
+                    <h3 className="text-xl font-semibold">{member.name}</h3>
+                    <p className="mt-1 text-primary">{member.role}</p>
+                  </div>
+                   <div className="mt-auto pt-4 flex justify-center gap-4">
                     <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                       <Linkedin size={20} />
                     </a>
