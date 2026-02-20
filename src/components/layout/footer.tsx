@@ -42,7 +42,7 @@ export function Footer() {
               alt="Inspire MANIT Logo"
               width={24}
               height={24}
-              className="h-6 w-6"
+              className="h-6 w-6 rounded-md"
             />
             <span className="font-bold text-lg">INSPIRE MANIT</span>
           </Link>
