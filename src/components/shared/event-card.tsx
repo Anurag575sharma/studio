@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 import type { TEvent } from '@/lib/definitions';
 import { Calendar, MapPin } from 'lucide-react';
 import { format } from 'date-fns';
+import Image from 'next/image';
 
 type EventCardProps = {
   event: TEvent;
@@ -19,7 +20,12 @@ type EventCardProps = {
 
 export function EventCard({ event, isPast = false }: EventCardProps) {
   return (
-    <Card className={cn('flex h-full flex-col', isPast && 'grayscale')}>
+    <Card className={cn('flex h-full flex-col overflow-hidden', isPast && 'opacity-70 grayscale')}>
+      {event.imageUrl && (
+        <div className="relative h-48 w-full">
+          <Image src={event.imageUrl} alt={event.title} fill className="object-cover" />
+        </div>
+      )}
       <CardHeader>
         <CardTitle>{event.title}</CardTitle>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2 text-sm text-muted-foreground">
@@ -46,7 +52,7 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
         </Accordion>
       </CardContent>
       <CardFooter>
-        {event.isUpcoming && event.registrationLink ? (
+        {event.isUpcoming && event.registrationLink && event.registrationLink !== '#' ? (
           <Button asChild className="w-full">
             <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
               Register Now
@@ -54,7 +60,7 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
           </Button>
         ) : (
           <Badge variant="outline" className="w-full justify-center">
-            Event Concluded
+            {isPast ? 'Event Concluded' : 'Registrations Closed'}
           </Badge>
         )}
       </CardFooter>

@@ -4,15 +4,20 @@ export type TGalleryImage = {
   _id: string;
   title: string;
   imageUrl: string;
+  description?: string;
+  category?: string;
 };
 
 export type TMember = {
   _id: string;
   name: string;
   role: string;
+  year?: string;
+  branch?: string;
   imageUrl: string;
   linkedin?: string;
   github?: string;
+  instaId?: string;
   isCore: boolean;
 };
 
@@ -23,6 +28,9 @@ export type TAlumni = {
   testimonial: string;
   imageUrl: string;
   linkedin?: string;
+  role?: string;
+  company?: string;
+  branch?: string;
 };
 
 export type TEvent = {
@@ -30,6 +38,7 @@ export type TEvent = {
   title: string;
   date: string;
   description: string;
+  imageUrl?: string;
   isUpcoming: boolean;
   location: string;
   registrationLink?: string;

@@ -43,7 +43,10 @@ export default async function AlumniPage() {
                   className="mx-auto mb-4 rounded-full"
                 />
                 <h3 className="text-xl font-semibold">{person.name}</h3>
-                <p className="text-sm text-primary">Batch of {person.batch}</p>
+                {person.role && person.company && (
+                  <p className="text-sm text-primary">{person.role} @ {person.company}</p>
+                )}
+                <p className="text-sm text-muted-foreground">Batch of {person.batch}</p>
                 <blockquote className="mt-4 flex-grow border-l-2 border-primary pl-4 text-left text-muted-foreground italic">
                   {person.testimonial}
                 </blockquote>
