@@ -20,7 +20,7 @@ type EventCardProps = {
 
 export function EventCard({ event, isPast = false }: EventCardProps) {
   return (
-    <Card className={cn('flex h-full flex-col overflow-hidden', isPast && 'opacity-70 grayscale')}>
+    <Card className={cn('flex h-full flex-col overflow-hidden', isPast && 'opacity-70')}>
       {event.imageUrl && (
         <div className="relative h-48 w-full">
           <Image src={event.imageUrl} alt={event.title} fill className="object-cover" />
