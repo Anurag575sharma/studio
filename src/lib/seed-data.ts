@@ -120,7 +120,7 @@ export const alumni = [
       name: "Harsh Lodhi",
       role: "SDE 1",
       company: "Qubits",
-      batch: "2024",
+      year: "2024",
       branch: "ELECTRICAL",
       image: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1770452861/1768329126791_h8cimj.jpg",
       linkedin: "https://www.linkedin.com/in/harshlodhi08/",
@@ -130,14 +130,14 @@ export const alumni = [
       name: "Anurag Sharma",
       role: "Former President",
       company: "JPMorgan Chase",
-      batch: "2025",
+      year: "2025",
       branch: "CSE",
       image: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1770404586/1758282729902_renysy.jpg",
       linkedin: "https://www.linkedin.com/in/anuragsharma",
       testimonial: "My time at INSPIRE was transformative. It shaped my leadership skills, provided deep insights from the Bhagavad Gita, and prepared me for the corporate world."
   },
-  { name: 'Aditi Rao', batch: '2020', testimonial: 'INSPIRE MANIT was where my journey into tech truly began. The blend of technical projects and wisdom from the Gita was instrumental in my career and personal growth.', image: 'https://picsum.photos/seed/9/400/400', linkedin: '#', role: 'Software Engineer', company: 'Google', branch: 'CSE' },
-  { name: 'Vikram Mehta', batch: '2019', testimonial: 'The leadership experience I gained at INSPIRE has been invaluable. It taught me how to manage teams, drive projects, and apply timeless principles from the Bhagavad Gita to solve modern problems.', image: 'https://picsum.photos/seed/10/400/400', linkedin: '#', role: 'Product Manager', company: 'Microsoft', branch: 'ME' },
+  { name: 'Aditi Rao', year: '2020', testimonial: 'INSPIRE MANIT was where my journey into tech truly began. The blend of technical projects and wisdom from the Gita was instrumental in my career and personal growth.', image: 'https://picsum.photos/seed/9/400/400', linkedin: '#', role: 'Software Engineer', company: 'Google', branch: 'CSE' },
+  { name: 'Vikram Mehta', year: '2019', testimonial: 'The leadership experience I gained at INSPIRE has been invaluable. It taught me how to manage teams, drive projects, and apply timeless principles from the Bhagavad Gita to solve modern problems.', image: 'https://picsum.photos/seed/10/400/400', linkedin: '#', role: 'Product Manager', company: 'Microsoft', branch: 'ME' },
 ];
 
 export const galleryImages = [

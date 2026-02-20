@@ -24,7 +24,7 @@ export type TMember = {
 export type TAlumni = {
   _id:string;
   name: string;
-  batch: string;
+  year: string;
   testimonial: string;
   image: string;
   linkedin?: string;

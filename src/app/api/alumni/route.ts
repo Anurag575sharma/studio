@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   noStore();
   try {
     await dbConnect();
-    const alumni = await Alumni.find({}).sort({ batch: -1 });
+    const alumni = await Alumni.find({}).sort({ year: -1 });
     return NextResponse.json(alumni);
   } catch (error) {
     let errorMessage = 'An unknown error occurred';

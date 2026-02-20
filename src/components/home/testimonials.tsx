@@ -14,7 +14,7 @@ export function Testimonials() {
     {
       _id: '1',
       name: 'Harsh Lodhi',
-      batch: '2024',
+      year: '2024',
       company: 'Qubits',
       image:
         'https://res.cloudinary.com/dauf7v7uz/image/upload/v1770452861/1768329126791_h8cimj.jpg',
@@ -24,7 +24,7 @@ export function Testimonials() {
     {
       _id: '2',
       name: 'Anurag Sharma',
-      batch: '2025',
+      year: '2025',
       company: 'JPMorgan Chase',
       image:
         'https://res.cloudinary.com/dauf7v7uz/image/upload/v1770404586/1758282729902_renysy.jpg',
@@ -34,7 +34,7 @@ export function Testimonials() {
     {
       _id: '3',
       name: 'Aditi Rao',
-      batch: '2020',
+      year: '2020',
       company: 'Google',
       image: 'https://picsum.photos/seed/9/400/400',
       testimonial:
@@ -82,7 +82,7 @@ export function Testimonials() {
                         <p className="text-sm text-primary">{testimonial.company}</p>
                       )}
                       <p className="text-sm text-muted-foreground">
-                        Batch of {testimonial.batch}
+                        Batch of {testimonial.year}
                       </p>
                     </footer>
                   </CardContent>
