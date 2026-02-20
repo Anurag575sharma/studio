@@ -1,5 +1,3 @@
-'use client';
-
 import Image from "next/image";
 import { SpotlightCard } from "@/components/branches/spotlight-card";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
