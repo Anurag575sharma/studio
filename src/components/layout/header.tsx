@@ -14,7 +14,7 @@ const navLinks = [
   { href: '/alumni', label: 'Alumni' },
   { href: '/branches', label: 'Branches' },
   { href: '/events', label: 'Events' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Register' },
 ];
 
 export function Header() {
