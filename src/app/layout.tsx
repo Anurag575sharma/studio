@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     template: '%s | INSPIRE MANIT',
   },
   description: 'The official website of INSPIRE MANIT, a student society at MANIT Bhopal focused on technical excellence, cultural promotion, and principle-centered leadership.',
+  icons: {
+    icon: 'https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601447/InspireLogo_tuwl3m.jpg',
+    shortcut: 'https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601447/InspireLogo_tuwl3m.jpg',
+    apple: 'https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601447/InspireLogo_tuwl3m.jpg',
+  },
   openGraph: {
     title: 'INSPIRE MANIT | Official Society Website',
     description: 'The official website of INSPIRE MANIT, a student society at MANIT Bhopal.',
