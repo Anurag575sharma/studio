@@ -9,7 +9,7 @@ import { ChatbotWidget } from '@/components/chatbot/chatbot-widget';
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in'),
   title: {
-    default: 'INSPIRE MANIT | Official Society Website',
+    default: 'INSPIRE MANIT',
     template: '%s | INSPIRE MANIT',
   },
   description: 'The official website of INSPIRE MANIT, a student society at MANIT Bhopal focused on technical excellence, cultural promotion, and principle-centered leadership.',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     apple: 'https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601447/InspireLogo_tuwl3m.jpg',
   },
   openGraph: {
-    title: 'INSPIRE MANIT | Official Society Website',
+    title: 'INSPIRE MANIT',
     description: 'The official website of INSPIRE MANIT, a student society at MANIT Bhopal.',
     url: process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in',
     siteName: 'INSPIRE MANIT',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'INSPIRE MANIT | Official Society Website',
+    title: 'INSPIRE MANIT',
     description: 'The official website of INSPIRE MANIT, a student society at MANIT Bhopal.',
     images: ['https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601447/InspireLogo_tuwl3m.jpg'],
   },
