@@ -13,9 +13,10 @@ async function getCoreTeamMembers(): Promise<TMember[]> {
   noStore();
   try {
     await dbConnect();
-    // Fetch up to 3 core team members
-    const members = await Member.find({ isCore: true }).limit(3).sort({ name: 1 });
-    return JSON.parse(JSON.stringify(members));
+    // Fetch all members, then filter for core members to ensure data is loaded.
+    const allMembers = await Member.find({}).sort({ name: 1 });
+    const coreMembers = allMembers.filter((member) => member.isCore).slice(0, 3);
+    return JSON.parse(JSON.stringify(coreMembers));
   } catch (error) {
     console.error('Error fetching core team members:', error);
     return [];
