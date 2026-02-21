@@ -2,8 +2,6 @@ import { SectionWrapper } from "@/components/shared/section-wrapper";
 import type { TImage } from "@/lib/definitions";
 import Image from "next/image";
 import type { Metadata } from 'next';
-import dbConnect from '@/lib/db-connect';
-import ImageModel from '@/lib/models/Image';
 import { unstable_noStore as noStore } from 'next/cache';
 
 export const metadata: Metadata = {
@@ -14,9 +12,13 @@ export const metadata: Metadata = {
 async function getImages(): Promise<TImage[]> {
   noStore();
   try {
-    await dbConnect();
-    const images = await ImageModel.find({}).lean();
-    return JSON.parse(JSON.stringify(images));
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in';
+    const res = await fetch(`${baseUrl}/api/gallery`, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error('Failed to fetch gallery images from API');
+      throw new Error('Failed to fetch data');
+    }
+    return await res.json();
   } catch (error) {
     console.error('Failed to fetch gallery images:', error);
     // This will activate the closest `error.js` Error Boundary

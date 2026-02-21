@@ -6,20 +6,21 @@ import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
 import type { TMember } from '@/lib/definitions';
-import dbConnect from '@/lib/db-connect';
-import Member from '@/lib/models/Member';
 import { unstable_noStore as noStore } from 'next/cache';
 
-// This function now fetches data directly from the database.
 async function getCoreMembers(): Promise<TMember[]> {
-  noStore(); // Ensures the data is fresh on every request.
+  noStore();
   try {
-    await dbConnect(); // Connect to the database.
-    const members = await Member.find({ isCore: true }).limit(3).lean();
-    // The data from mongoose is not a plain object, so we need to serialize it.
-    return JSON.parse(JSON.stringify(members));
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in';
+    const res = await fetch(`${baseUrl}/api/members`, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error('Failed to fetch members from API');
+      return [];
+    }
+    const allMembers: TMember[] = await res.json();
+    return allMembers.filter(member => member.isCore).slice(0, 3);
   } catch (error) {
-    console.error('Failed to fetch members directly:', error);
+    console.error('Failed to fetch core members:', error);
     return [];
   }
 }

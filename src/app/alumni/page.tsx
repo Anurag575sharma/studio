@@ -4,8 +4,6 @@ import type { TAlumni } from '@/lib/definitions';
 import { Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import dbConnect from '@/lib/db-connect';
-import Alumni from '@/lib/models/Alumni';
 import { unstable_noStore as noStore } from 'next/cache';
 
 export const metadata: Metadata = {
@@ -16,11 +14,15 @@ export const metadata: Metadata = {
 async function getAlumni(): Promise<TAlumni[]> {
   noStore();
   try {
-    await dbConnect();
-    const alumni = await Alumni.find({}).sort({ year: -1 }).lean();
-    return JSON.parse(JSON.stringify(alumni));
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in';
+    const res = await fetch(`${baseUrl}/api/alumni`, { cache: 'no-store' });
+    if (!res.ok) {
+      console.error('Failed to fetch alumni from API');
+      return [];
+    }
+    return await res.json();
   } catch (error) {
-    console.error('Failed to fetch alumni directly:', error);
+    console.error('Failed to fetch alumni:', error);
     return [];
   }
 }
