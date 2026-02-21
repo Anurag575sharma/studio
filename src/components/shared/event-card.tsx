@@ -16,6 +16,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
 import type { TEvent } from '@/lib/definitions';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
@@ -88,7 +94,7 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
         </CardFooter>
       </Card>
 
-      <DialogContent className="max-w-md">
+      <DialogContent className="max-w-lg">
         <DialogHeader>
           {event.imageUrl && event.imageUrl.startsWith('http') && (
             <div className="relative mb-4 h-56 w-full">
@@ -112,8 +118,40 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
             </div>
           </div>
         </DialogHeader>
-        <div className="mt-4 max-h-[40vh] overflow-y-auto pr-2 text-muted-foreground">
-          <p>{event.description}</p>
+        <div className="mt-4 max-h-[60vh] overflow-y-auto pr-2">
+          <p className="text-muted-foreground">{event.description}</p>
+          
+          {event.subEvents && event.subEvents.length > 0 && (
+            <div className="mt-6">
+              <h4 className="mb-2 text-lg font-semibold text-foreground">
+                Event Components
+              </h4>
+              <Accordion type="single" collapsible className="w-full">
+                {event.subEvents.map((subEvent) => (
+                  <AccordionItem value={subEvent._id} key={subEvent._id}>
+                    <AccordionTrigger>{subEvent.title}</AccordionTrigger>
+                    <AccordionContent>
+                      <div className="flex flex-col gap-4">
+                        {subEvent.imageUrl && (
+                          <div className="relative h-40 w-full">
+                            <Image
+                              src={subEvent.imageUrl}
+                              alt={subEvent.title}
+                              fill
+                              className="rounded-md object-cover"
+                            />
+                          </div>
+                        )}
+                        <p className="text-sm text-muted-foreground">
+                          {subEvent.description}
+                        </p>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
         </div>
         {event.isUpcoming &&
           event.registrationLink &&

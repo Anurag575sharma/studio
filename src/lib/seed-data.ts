@@ -2,34 +2,40 @@
 export const events = [
   // Upcoming
   {
+    _id: "iks-sphere-main",
     title: "IKS Sphere",
     date: new Date("2026-02-25"),
-    description: "The official IKS event (organised by govt. of india) consisting of debate, ideathon and much more.",
+    description: "The official IKS event (organised by govt. of india) consisting of a debate, ideathon and much more, all based on the Indian Knowledge System.",
     imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601898/WhatsApp_Image_2026-02-16_at_15.23.23_cr1msn.jpg",
     isUpcoming: true,
     location: "Online",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
-  },
-  {
-    title: "IKS Gyan Manthan",
-    date: new Date("2026-02-25"),
-    description: "This is a debate based on Indian Knowledge System.",
-    imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771664777/iks_gyan_manthan_ety7ls.jpg",
-    isUpcoming: true,
-    location: "Online",
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
-  },
-  {
-    title: "IKS Ideathon",
-    date: new Date("2026-02-25"),
-    description: "This is an ideathon contest based on Indian Knowledge System.",
-    imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771664842/iks_ideathon_mn3vre.jpg",
-    isUpcoming: true,
-    location: "Online",
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
+    subEvents: [
+      {
+        _id: 'iks-gyan-manthan',
+        title: "IKS Gyan Manthan",
+        date: new Date("2026-02-25"),
+        description: "This is a debate based on Indian Knowledge System.",
+        imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771664777/iks_gyan_manthan_ety7ls.jpg",
+        isUpcoming: true,
+        location: "Online",
+        registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
+      },
+      {
+        _id: 'iks-ideathon',
+        title: "IKS Ideathon",
+        date: new Date("2026-02-25"),
+        description: "This is an ideathon contest based on Indian Knowledge System.",
+        imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771664842/iks_ideathon_mn3vre.jpg",
+        isUpcoming: true,
+        location: "Online",
+        registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
+      },
+    ]
   },
   // Past
   {
+    _id: 'uddipan',
     title: "Uddipan: Talk by Amogh Lila Das",
     date: new Date("2025-08-29"),
     description: "An inspiring talk show by HG Amogh Lila Das pr guiding students through the real formula of success in life.",
@@ -39,6 +45,7 @@ export const events = [
     registrationLink: "#",
   },
   {
+    _id: 'anti-ragging',
     title: "Anti ragging Selfie Booth & Slogan writing competition 25",
     date: new Date("2025-08-11"),
     description: "Inspire participated in the annual anti-raging event (organised by Govt of India) and organised poster making and slogan writing competition to increase awareness among the students about anti-ragging.",
@@ -48,6 +55,7 @@ export const events = [
     registrationLink: "https://www.instagram.com/p/DNCqZ96yPKX/",
   },
     {
+    _id: 'gita-mahotsav',
     title: "Gita Mahotsav",
     date: new Date("2024-12-10"),
     description: "This is a quiz contest based on Srimad Bhagavat Gita.",

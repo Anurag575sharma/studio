@@ -42,4 +42,5 @@ export type TEvent = {
   isUpcoming: boolean;
   location: string;
   registrationLink?: string;
+  subEvents?: TEvent[];
 };
