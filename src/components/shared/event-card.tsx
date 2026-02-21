@@ -15,6 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from '@/components/ui/dialog';
 import {
   Accordion,
@@ -153,11 +154,14 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
             </div>
           )}
         </div>
-        {event.isUpcoming &&
-          event.registrationLink &&
-          event.registrationLink !== '#' && (
-            <div className="mt-6">
-              <Button asChild size="lg" className="w-full">
+        <div className="mt-6 flex flex-col-reverse gap-2 border-t pt-4 sm:flex-row sm:justify-end">
+           <DialogClose asChild>
+              <Button variant="outline" className="w-full sm:w-auto">Close</Button>
+          </DialogClose>
+          {event.isUpcoming &&
+            event.registrationLink &&
+            event.registrationLink !== '#' && (
+              <Button asChild size="lg" className="w-full sm:w-auto">
                 <a
                   href={event.registrationLink}
                   target="_blank"
@@ -166,8 +170,8 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
                   Register Now <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-            </div>
-          )}
+            )}
+        </div>
       </DialogContent>
     </Dialog>
   );

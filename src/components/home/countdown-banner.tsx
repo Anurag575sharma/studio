@@ -71,7 +71,7 @@ export function CountdownBanner() {
               <span className="md:hidden font-bold">{upcomingEvent.title} is starting!</span>
             </p>
           </div>
-          <div className="hidden lg:flex items-center gap-x-4">
+          <div className="flex w-full items-center justify-center gap-x-4 order-last md:w-auto md:order-none">
               {timeParts.map(part => (
                   <div key={part.label} className="text-center">
                       <div className="text-2xl font-bold tracking-tight">{String(part.value).padStart(2, '0')}</div>
