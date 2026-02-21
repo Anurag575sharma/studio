@@ -67,20 +67,21 @@ export const events = [
 ];
 
 export const members = [
-  { name: 'Riya Sharma', role: 'President', year: '4th Year', branch: 'ECE', image: 'https://picsum.photos/seed/1/400/400', isCore: true, linkedin: '#', github: '#', instaId: '#' },
-  { name: 'Aarav Patel', role: 'Vice President', year: '4th Year', branch: 'ME', image: 'https://picsum.photos/seed/2/400/400', isCore: true, linkedin: '#', github: '#', instaId: '#' },
-  { name: 'Sameer Khan', role: 'Technical Head', year: '3rd Year', branch: 'CSE', image: 'https://picsum.photos/seed/3/400/400', isCore: true, linkedin: '#', github: '#', instaId: '#' },
-  { name: 'Priya Singh', role: 'Events Head', year: '3rd Year', branch: 'Civil', image: 'https://picsum.photos/seed/4/400/400', isCore: true, linkedin: '#', github: '#', instaId: '#' },
-  { name: "Sagnick Dey", role: "Executive", year: "2nd Year", branch: "CSE", image: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1769764933/WhatsApp_Image_2026-01-30_at_14.50.51_jimen1.jpg", linkedin: "https://www.linkedin.com/in/sagnick-dey-712017334/", instaId: "sagnick_427", isCore: false, github: '#' },
-  { name: "Divyanshu Shukla", role: "Graphic Designer", year: "3rd Year", branch: "MANIT", image: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1770262044/Divyanshu_img_gywj9m.jpg", linkedin: "https://www.linkedin.com/in/kumar-divyanshu-shuka-81b08131b/", instaId: "div_shukla", isCore: false, github: '#' },
-  { name: 'Arjun Verma', role: 'Design Lead', year: '2nd Year', branch: 'Arch', image: 'https://picsum.photos/seed/5/400/400', isCore: false, linkedin: '#', github: '#', instaId: '#' },
-  { name: 'Neha Gupta', role: 'Content Lead', year: '2nd Year', branch: 'Chem', image: 'https://picsum.photos/seed/6/400/400', isCore: false, linkedin: '#', github: '#', instaId: '#' },
-  { name: 'Karan Malhotra', role: 'Marketing Lead', year: '2nd Year', branch: 'EE', image: 'https://picsum.photos/seed/7/400/400', isCore: false, linkedin: '#', github: '#', instaId: '#' },
-  { name: 'Anjali Reddy', role: 'Web Developer', year: '3rd Year', branch: 'CSE', image: 'https://picsum.photos/seed/8/400/400', isCore: false, linkedin: '#', github: '#', instaId: '#' },
+  { _id: "member-1", name: 'Riya Sharma', role: 'President', year: '4th Year', branch: 'ECE', image: 'https://picsum.photos/seed/1/400/400', isCore: true, linkedin: '#', github: '#', instaId: '#' },
+  { _id: "member-2", name: 'Aarav Patel', role: 'Vice President', year: '4th Year', branch: 'ME', image: 'https://picsum.photos/seed/2/400/400', isCore: true, linkedin: '#', github: '#', instaId: '#' },
+  { _id: "member-3", name: 'Sameer Khan', role: 'Technical Head', year: '3rd Year', branch: 'CSE', image: 'https://picsum.photos/seed/3/400/400', isCore: true, linkedin: '#', github: '#', instaId: '#' },
+  { _id: "member-4", name: 'Priya Singh', role: 'Events Head', year: '3rd Year', branch: 'Civil', image: 'https://picsum.photos/seed/4/400/400', isCore: true, linkedin: '#', github: '#', instaId: '#' },
+  { _id: "member-5", name: "Sagnick Dey", role: "Executive", year: "2nd Year", branch: "CSE", image: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1769764933/WhatsApp_Image_2026-01-30_at_14.50.51_jimen1.jpg", linkedin: "https://www.linkedin.com/in/sagnick-dey-712017334/", instaId: "sagnick_427", isCore: false, github: '#' },
+  { _id: "member-6", name: "Divyanshu Shukla", role: "Graphic Designer", year: "3rd Year", branch: "MANIT", image: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1770262044/Divyanshu_img_gywj9m.jpg", linkedin: "https://www.linkedin.com/in/kumar-divyanshu-shuka-81b08131b/", instaId: "div_shukla", isCore: false, github: '#' },
+  { _id: "member-7", name: 'Arjun Verma', role: 'Design Lead', year: '2nd Year', branch: 'Arch', image: 'https://picsum.photos/seed/5/400/400', isCore: false, linkedin: '#', github: '#', instaId: '#' },
+  { _id: "member-8", name: 'Neha Gupta', role: 'Content Lead', year: '2nd Year', branch: 'Chem', image: 'https://picsum.photos/seed/6/400/400', isCore: false, linkedin: '#', github: '#', instaId: '#' },
+  { _id: "member-9", name: 'Karan Malhotra', role: 'Marketing Lead', year: '2nd Year', branch: 'EE', image: 'https://picsum.photos/seed/7/400/400', isCore: false, linkedin: '#', github: '#', instaId: '#' },
+  { _id: "member-10", name: 'Anjali Reddy', role: 'Web Developer', year: '3rd Year', branch: 'CSE', image: 'https://picsum.photos/seed/8/400/400', isCore: false, linkedin: '#', github: '#', instaId: '#' },
 ];
 
 export const alumni = [
   {
+      _id: "alumni-1",
       name: "Harsh Lodhi",
       role: "SDE 1",
       company: "Qubits",
@@ -91,6 +92,7 @@ export const alumni = [
       testimonial: "INSPIRE MANIT provided a great platform to learn and grow. It shaped my life with the wisdom of Bhagavad Gita and sharpened my technical skills. The community is amazing!"
   },
   {
+      _id: "alumni-2",
       name: "Anurag Sharma",
       role: "Former President",
       company: "JPMorgan Chase",
@@ -100,8 +102,8 @@ export const alumni = [
       linkedin: "https://www.linkedin.com/in/anuragsharma",
       testimonial: "My time at INSPIRE was transformative. It shaped my leadership skills, provided deep insights from the Bhagavad Gita, and prepared me for the corporate world."
   },
-  { name: 'Aditi Rao', year: '2020', testimonial: 'INSPIRE MANIT was where my journey into tech truly began. The blend of technical projects and wisdom from the Gita was instrumental in my career and personal growth.', image: 'https://picsum.photos/seed/9/400/400', linkedin: '#', role: 'Software Engineer', company: 'Google', branch: 'CSE' },
-  { name: 'Vikram Mehta', year: '2019', testimonial: 'The leadership experience I gained at INSPIRE has been invaluable. It taught me how to manage teams, drive projects, and apply timeless principles from the Bhagavad Gita to solve modern problems.', image: 'https://picsum.photos/seed/10/400/400', linkedin: '#', role: 'Product Manager', company: 'Microsoft', branch: 'ME' },
+  { _id: "alumni-3", name: 'Aditi Rao', year: '2020', testimonial: 'INSPIRE MANIT was where my journey into tech truly began. The blend of technical projects and wisdom from the Gita was instrumental in my career and personal growth.', image: 'https://picsum.photos/seed/9/400/400', linkedin: '#', role: 'Software Engineer', company: 'Google', branch: 'CSE' },
+  { _id: "alumni-4", name: 'Vikram Mehta', year: '2019', testimonial: 'The leadership experience I gained at INSPIRE has been invaluable. It taught me how to manage teams, drive projects, and apply timeless principles from the Bhagavad Gita to solve modern problems.', image: 'https://picsum.photos/seed/10/400/400', linkedin: '#', role: 'Product Manager', company: 'Microsoft', branch: 'ME' },
 ];
 
 export const galleryImages = [

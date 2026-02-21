@@ -1,29 +1,13 @@
-
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
-import type { TMember } from '@/lib/definitions';
-import { unstable_noStore as noStore } from 'next/cache';
-import dbConnect from '@/lib/db-connect';
-import Member from '@/lib/models/Member';
+import { members as allMembers } from '@/lib/seed-data';
 
-async function getCoreMembers(): Promise<TMember[]> {
-  noStore();
-  try {
-    await dbConnect();
-    const allMembers: TMember[] = await Member.find({ isCore: true }).sort({ name: 1 }).limit(3).lean();
-    return JSON.parse(JSON.stringify(allMembers));
-  } catch (error) {
-    console.error('Failed to fetch core members:', error);
-    return [];
-  }
-}
-
-export async function Team() {
-  const teamMembers = await getCoreMembers();
+export function Team() {
+  const teamMembers = allMembers.filter(member => member.isCore).slice(0, 3);
 
   return (
     <SectionWrapper glowColor="accent">
