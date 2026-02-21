@@ -46,10 +46,10 @@ export function Testimonials() {
     <SectionWrapper>
       <div className="text-center">
         <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-          Words from Our Alumni
+          Our Inspiration
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Hear what our former members have to say about their experience.
+          Learn from the journeys of our esteemed alumni who continue to inspire us.
         </p>
       </div>
 
