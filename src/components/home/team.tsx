@@ -4,10 +4,26 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
-import { members as allMembers } from '@/lib/seed-data';
+import type { TMember } from '@/lib/definitions';
+import { unstable_noStore as noStore } from 'next/cache';
+import dbConnect from '@/lib/db-connect';
+import Member from '@/lib/models/Member';
 
-export function Team() {
-  const teamMembers = allMembers.filter(member => member.isCore).slice(0, 3);
+async function getCoreTeamMembers(): Promise<TMember[]> {
+  noStore();
+  try {
+    await dbConnect();
+    // Fetch up to 3 core team members
+    const members = await Member.find({ isCore: true }).limit(3).sort({ name: 1 });
+    return JSON.parse(JSON.stringify(members));
+  } catch (error) {
+    console.error('Error fetching core team members:', error);
+    return [];
+  }
+}
+
+export async function Team() {
+  const teamMembers = await getCoreTeamMembers();
 
   return (
     <SectionWrapper glowColor="accent">
