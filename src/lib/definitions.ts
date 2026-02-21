@@ -1,3 +1,4 @@
+
 import type { models } from 'mongoose';
 
 export type TImage = {
@@ -36,7 +37,7 @@ export type TAlumni = {
 export type TEvent = {
   _id: string;
   title: string;
-  date: string;
+  date: Date | string;
   description: string;
   imageUrl?: string;
   isUpcoming: boolean;
