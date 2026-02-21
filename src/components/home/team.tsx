@@ -7,18 +7,15 @@ import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
 import type { TMember } from '@/lib/definitions';
 import { unstable_noStore as noStore } from 'next/cache';
+import dbConnect from '@/lib/db-connect';
+import Member from '@/lib/models/Member';
 
 async function getCoreMembers(): Promise<TMember[]> {
   noStore();
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in';
-    const res = await fetch(`${baseUrl}/api/members`, { cache: 'no-store' });
-    if (!res.ok) {
-      console.error('Failed to fetch members from API');
-      return [];
-    }
-    const allMembers: TMember[] = await res.json();
-    return allMembers.filter(member => member.isCore).slice(0, 3);
+    await dbConnect();
+    const allMembers: TMember[] = await Member.find({ isCore: true }).sort({ name: 1 }).limit(3).lean();
+    return JSON.parse(JSON.stringify(allMembers));
   } catch (error) {
     console.error('Failed to fetch core members:', error);
     return [];

@@ -5,6 +5,8 @@ import { Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import { unstable_noStore as noStore } from 'next/cache';
 import type { Metadata } from 'next';
+import dbConnect from '@/lib/db-connect';
+import Member from '@/lib/models/Member';
 
 export const metadata: Metadata = {
   title: 'Our Team',
@@ -14,13 +16,9 @@ export const metadata: Metadata = {
 async function getMembers(): Promise<TMember[]> {
   noStore();
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://inspiremanit.in';
-    const res = await fetch(`${baseUrl}/api/members`, { cache: 'no-store' });
-    if (!res.ok) {
-      console.error('Failed to fetch members from API');
-      return [];
-    }
-    return await res.json();
+    await dbConnect();
+    const members = await Member.find({}).sort({ isCore: -1, name: 1 });
+    return JSON.parse(JSON.stringify(members));
   } catch (error) {
     console.error('Error fetching members:', error);
     return [];
