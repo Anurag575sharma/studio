@@ -15,7 +15,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from '@/components/ui/dialog';
 import {
   Accordion,
@@ -155,9 +154,6 @@ export function EventCard({ event, isPast = false }: EventCardProps) {
           )}
         </div>
         <div className="mt-6 flex flex-col-reverse gap-2 border-t pt-4 sm:flex-row sm:justify-end">
-           <DialogClose asChild>
-              <Button variant="outline" className="w-full sm:w-auto">Close</Button>
-          </DialogClose>
           {event.isUpcoming &&
             event.registrationLink &&
             event.registrationLink !== '#' && (
