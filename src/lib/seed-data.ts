@@ -1,3 +1,4 @@
+
 export const events = [
   // Upcoming
   {
@@ -10,10 +11,10 @@ export const events = [
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
   },
   {
-    title: "IKS Debate",
+    title: "IKS Gyan Manthan",
     date: new Date("2026-02-25"),
     description: "This is a debate based on Indian Knowledge System.",
-    imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601898/WhatsApp_Image_2026-02-16_at_15.23.23_cr1msn.jpg",
+    imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771664777/iks_gyan_manthan_ety7ls.jpg",
     isUpcoming: true,
     location: "Online",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
@@ -22,19 +23,10 @@ export const events = [
     title: "IKS Ideathon",
     date: new Date("2026-02-25"),
     description: "This is an ideathon contest based on Indian Knowledge System.",
-    imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601898/WhatsApp_Image_2026-02-16_at_15.23.23_cr1msn.jpg",
+    imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771664842/iks_ideathon_mn3vre.jpg",
     isUpcoming: true,
     location: "Online",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
-  },
-  {
-    title: "Gita Marathon",
-    date: new Date("2026-01-15"),
-    description: "This is a quiz contest based on Srimad Bhagavat Gita.",
-    imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601627/gitaMarathon_qy4re7.jpg",
-    isUpcoming: true,
-    location: "Online",
-    registrationLink: "https://gitacontest.in/",
   },
   // Past
   {
@@ -55,50 +47,14 @@ export const events = [
     location: "MANIT Bhopal",
     registrationLink: "https://www.instagram.com/p/DNCqZ96yPKX/",
   },
-  {
-    title: "Online: Padai Ki Bate: Academic guide",
-    date: new Date("2023-09-17"),
-    description: "An online guidance session for the 1st-year students for upcoming tests by inspire seniors.",
-    imageUrl: "https://picsum.photos/seed/padai/800/600",
+    {
+    title: "Gita Mahotsav",
+    date: new Date("2024-12-10"),
+    description: "This is a quiz contest based on Srimad Bhagavat Gita.",
+    imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601627/gitaMarathon_qy4re7.jpg",
     isUpcoming: false,
     location: "Online",
-    registrationLink: "#",
-  },
-  {
-    title: "Online:Success Ladder: Alumni talk",
-    date: new Date("2023-09-01"),
-    description: "A guiding talk show(online) on achieving success in life , by our alumnis",
-    imageUrl: "https://picsum.photos/seed/success-ladder/800/600",
-    isUpcoming: false,
-    location: "Online",
-    registrationLink: "#",
-  },
-  {
-    title: "Technical Bootcamp at IIT Patna",
-    date: new Date("2023-07-03"),
-    description: "Another technical bootcamp by inspire at IIT Patna",
-    imageUrl: "https://picsum.photos/seed/iit-patna/800/600",
-    isUpcoming: false,
-    location: "IIT Patna",
-    registrationLink: "#",
-  },
-  {
-    title: "Techsphurti Camp at IIT Kanpur",
-    date: new Date("2023-03-11"),
-    description: "Technical bootcamp for 1st-year students by inspire at IIT Kanpur",
-    imageUrl: "https://picsum.photos/seed/iit-kanpur/800/600",
-    isUpcoming: false,
-    location: "IIT Kanpur",
-    registrationLink: "#",
-  },
-  {
-    title: "Alumni talk by Nikhil Verma SE at Apple (online)",
-    date: new Date("2022-12-06"),
-    description: "An engaging online talk show event by Mr. Nikhil Verma sir , SE at APPLE",
-    imageUrl: "https://picsum.photos/seed/nikhil-verma/800/600",
-    isUpcoming: false,
-    location: "Online",
-    registrationLink: "#",
+    registrationLink: "https://gitacontest.in/",
   },
 ];
 
