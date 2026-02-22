@@ -10,7 +10,7 @@ export function FacultyCoordinator() {
             src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771694609/WhatsApp_Image_2026-02-21_at_18.06.48_n21oz6.jpg"
             alt="Dr. Savita Dixit, Faculty Coordinator"
             fill
-            className="rounded-2xl object-cover shadow-2xl"
+            className="rounded-2xl object-cover object-top shadow-2xl"
            />
         </div>
         <div className="order-first lg:order-last">
