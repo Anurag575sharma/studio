@@ -4,6 +4,7 @@ import { Hero } from '@/components/home/hero';
 import { Branches } from '@/components/home/branches';
 import { Testimonials } from '@/components/home/testimonials';
 import { UpcomingEvents } from '@/components/home/upcoming-events';
+import { FacultyCoordinator } from '@/components/home/faculty-coordinator';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <CountdownBanner />
       <Hero />
       <About />
+      <FacultyCoordinator />
       <UpcomingEvents />
       <Testimonials />
       <Branches />
