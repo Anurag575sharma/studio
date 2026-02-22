@@ -5,7 +5,7 @@ export function FacultyCoordinator() {
   return (
     <SectionWrapper glowColor="accent">
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <div className="relative h-96 w-full animate-in fade-in-0 zoom-in-95 duration-500 lg:order-first">
+        <div className="relative mx-auto w-full max-w-md aspect-[3/4] animate-in fade-in-0 zoom-in-95 duration-500 lg:order-first lg:mx-0 lg:max-w-none">
            <Image
             src="https://res.cloudinary.com/dauf7v7uz/image/upload/v1771694609/WhatsApp_Image_2026-02-21_at_18.06.48_n21oz6.jpg"
             alt="Dr. Savita Dixit, Faculty Coordinator"
