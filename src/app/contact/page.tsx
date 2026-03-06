@@ -26,7 +26,7 @@ export default function ContactPage() {
         </p>
         <Button asChild size="lg">
           <Link
-            href="https://forms.gle/WBFQYs6nE1QKo1TE7"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeiSUp25Y9b19Tjqw2Ya2A9uWB70kmHF0pifsiPFYal-BF60w/viewform"
             target="_blank"
             rel="noopener noreferrer"
           >

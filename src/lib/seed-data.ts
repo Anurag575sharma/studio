@@ -1,13 +1,13 @@
 
 export const events = [
-  // Upcoming
+  // Past
   {
     _id: "iks-sphere-main",
     title: "IKS Sphere",
     date: new Date("2026-02-25"),
     description: "The official IKS event (organised by govt. of india) consisting of a debate, ideathon and much more, all based on the Indian Knowledge System.",
     imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771601898/WhatsApp_Image_2026-02-16_at_15.23.23_cr1msn.jpg",
-    isUpcoming: true,
+    isUpcoming: false,
     location: "Online",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
     subEvents: [
@@ -17,7 +17,7 @@ export const events = [
         date: new Date("2026-02-25"),
         description: "This is a debate based on Indian Knowledge System.",
         imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771664777/iks_gyan_manthan_ety7ls.jpg",
-        isUpcoming: true,
+        isUpcoming: false,
         location: "Online",
         registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
       },
@@ -27,13 +27,12 @@ export const events = [
         date: new Date("2026-02-25"),
         description: "This is an ideathon contest based on Indian Knowledge System.",
         imageUrl: "https://res.cloudinary.com/dauf7v7uz/image/upload/v1771664842/iks_ideathon_mn3vre.jpg",
-        isUpcoming: true,
+        isUpcoming: false,
         location: "Online",
         registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeZDqfEjuyRw6dRPTt_0Co4MuA9eTHxrzNGI32wNCZybW_xlA/viewform",
       },
     ]
   },
-  // Past
   {
     _id: 'uddipan',
     title: "Uddipan: Talk by Amogh Lila Das",
